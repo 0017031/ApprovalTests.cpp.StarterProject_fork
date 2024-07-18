@@ -1,0 +1,17 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "Ninja-debug",
+            "displayName": "Ninja-debug-duild",
+            "description": "cpp compile from path",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_POLICY_DEFAULT_CMP0169": "OLD"
+            }
+        }
+    ]
+}
