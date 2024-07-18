@@ -37,6 +37,9 @@
 // ******************** From: Reporter.h
 
 #include <string>
+#include <filesystem>
+namespace fs = std::filesystem;
+
 
 namespace ApprovalTests
 {
@@ -5367,7 +5370,8 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 ARAXIS_MERGE,
-                DiffInfo("{ProgramFiles}Araxis\\Araxis Merge\\Compare.exe",
+                DiffInfo(//"{ProgramFiles}Araxis\\Araxis Merge\\Compare.exe",
+                            R"(D:\app\merge_araxis\compare.exe)",
                          Type::TEXT_AND_IMAGE))
 
             APPROVAL_TESTS_MACROS_ENTRY(
@@ -6303,8 +6307,13 @@ namespace ApprovalTests
 
     std::string FileUtils::getDirectory(const std::string& filePath)
     {
-        auto end = filePath.rfind(SystemUtils::getDirectorySeparator()) + 1;
-        auto directory = filePath.substr(0, end);
+        // auto sep = SystemUtils::getDirectorySeparator();
+        // auto end = filePath.rfind(sep) + 1;
+        // auto directory = filePath.substr(0, end);
+
+        fs::path file_path_obj(filePath);
+        fs::path dir_path = file_path_obj.parent_path();
+        auto directory  = dir_path.string();
         return directory;
     }
 
