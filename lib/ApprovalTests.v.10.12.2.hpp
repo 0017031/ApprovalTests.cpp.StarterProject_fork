@@ -5289,7 +5289,7 @@ namespace ApprovalTests
 
             APPROVAL_TESTS_MACROS_ENTRY(
                 CODE_COMPARE,
-                DiffInfo("{ProgramFiles}Devart\\Code Compare\\CodeCompare.exe",
+                DiffInfo(R"(D:\app\merge_araxis\compare.exe)",
                          Type::TEXT))
 
             APPROVAL_TESTS_MACROS_ENTRY(
