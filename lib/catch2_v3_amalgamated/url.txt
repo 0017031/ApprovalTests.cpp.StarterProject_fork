@@ -1,0 +1,4 @@
+https://github.com/catchorg/Catch2/releases/download/v3.6.0/catch_amalgamated.hpp.asc
+https://github.com/catchorg/Catch2/releases/download/v3.6.0/catch_amalgamated.cpp.asc
+https://github.com/catchorg/Catch2/releases/download/v3.6.0/catch_amalgamated.hpp
+https://github.com/catchorg/Catch2/releases/download/v3.6.0/catch_amalgamated.cpp

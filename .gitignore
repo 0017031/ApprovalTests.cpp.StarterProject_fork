@@ -1,4 +1,5 @@
 # CMake
+out/
 cmake-build-*/
 .vs/
 *.received.*

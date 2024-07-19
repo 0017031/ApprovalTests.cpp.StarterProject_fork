@@ -2240,6 +2240,8 @@ namespace ApprovalTests
 
 #include <catch2/catch.hpp>
 
+
+
 //namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::TestEventListenerBase
 {
@@ -2308,12 +2310,17 @@ CATCH_REGISTER_LISTENER(Catch2TestCommitRevert)
 
 
 #ifdef APPROVALS_CATCH2_V3
+
 #define APPROVAL_TESTS_INCLUDE_CPPS
 
+#ifdef APPROVALS_CATCH2_V3_AMALGAMATED
+#include <catch_amalgamated.hpp>
+#else
 #include <catch2/reporters/catch_reporter_event_listener.hpp>
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/reporters/catch_reporter_registrars.hpp>
 #include <catch2/catch_test_case_info.hpp>
+#endif
 
 //namespace ApprovalTests {
 struct Catch2ApprovalListener : Catch::EventListenerBase
