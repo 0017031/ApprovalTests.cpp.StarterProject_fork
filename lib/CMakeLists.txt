@@ -5,4 +5,3 @@ if(NOT TARGET ApprovalTests)
     add_library(${LIB_NAME}::${LIB_NAME} ALIAS ${LIB_NAME})
 endif()
 
-add_subdirectory(catch2v3)
