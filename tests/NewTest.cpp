@@ -25,6 +25,18 @@ TEST_CASE("ApprovingWithReporters")
                           Windows::AraxisMergeReporter()));
 }
 
+TEST_CASE("Approving_With_Custom_Reporters")
+{
+    // auto path =  R"(D:\app\merge_araxis\compare.exe)";
+    const auto reporter = ApprovalTests::CustomReporter::create(
+        R"(D:\app\merge_araxis\compare.exe)");
+
+    Approvals::verify("Reporters launch only on failure, now using "
+                      "a custom report",
+                      Options(*reporter));
+
+}
+
 TEST_CASE("Approval Is just an assertion library, you don't need to use it.")
 {
     REQUIRE(std::string("No Approvals, only Catch") ==
